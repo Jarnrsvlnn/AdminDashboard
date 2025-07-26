@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --dash-font-color: white;
+    --secondary-color: rgb(76, 136, 255);
+    --main-color: white;
+    --test-border: 1px solid red;
+    --cards-border: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 3fr;
+    height: 100vh;
+}
+
+/*-------------- DASHBOARD STYLES --------------*/
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    gap: 5rem;
+}
+
+.dashboard span,
+.dashboard h2,
+.dashboard h1 {
+    color: var(--dash-font-color);
+}
+
+.dashboard .logo-text {
+    display: flex;
+    gap: 1rem;
+}
+
+.dashboard .item {
+    margin-bottom: 1rem;
+}
+
+.dashboard .item {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/*-------------- HEADER STYLES --------------*/
+.header {
+    display: flex;
+    flex-direction: column;
+    border: var(--test-border);
+}
+
+.header .search-bar, 
+.header .nav-bar {
+    display: flex;
+    border: var(--test-border);
+    flex: 1;
+}
+
+/*-------------- MAIN CONTENT STYLES --------------*/
+
+main {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.projects-section,
+.announcements-section,
+.trendings-section {
+    border: var(--test-border);
+}
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.project-cards .cards{
+    height: 13rem;
+    border: var(--test-border);
+    border-radius: var(--cards-border);
+}
+
+.projects-section {
+    grid-row: span 2;
+}
