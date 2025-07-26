@@ -105,3 +105,17 @@ main {
 .projects-section {
     grid-row: span 2;
 }
+
+.announcements-section .pages {
+    border: var(--test-border);
+    border-radius: var(--cards-border);
+    padding: 0.6rem;
+}
+
+.announcements-section .page {
+    border-bottom: 1px solid grey;
+}
+
+.announcements-section .page:last-child {
+    border: none;
+}
