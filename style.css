@@ -139,6 +139,7 @@ main {
 .announcements-section {
     padding-top: 0.9rem;
 }
+
 .announcements-section .pages {
     border: var(--test-border);
     border-radius: var(--cards-border);
@@ -147,9 +148,20 @@ main {
 
 .announcements-section .page {
     border-bottom: 1px solid grey;
-    
 }
 
 .announcements-section .page:last-child {
     border: none;
+}
+
+.trendings-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.trendings-section .pages {
+    flex: 1;
+    border: var(--test-border);
+    border-radius: var(--cards-border);
+    padding: 0.6rem;
 }
