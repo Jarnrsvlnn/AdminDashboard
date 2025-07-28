@@ -28,6 +28,30 @@ body {
     height: 100vh;
 }
 
+/*-------------- HEADER STYLES --------------*/
+.header .search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.header > .search-bar > * {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-right: 5rem;
+}
+
+.header .search-bar .search-icon {
+    height: 2rem;
+    border-radius: 20px;
+    width: 30rem;
+    background-color: rgb(223, 220, 220);
+    cursor: text;
+}
+
 /*-------------- DASHBOARD STYLES --------------*/
 
 .dashboard {
@@ -36,7 +60,17 @@ body {
     background-color: var(--secondary-color);
     grid-column: 1;
     grid-row: 1 / span 2;
-    gap: 5rem;
+    gap: 2rem;
+}
+
+.dashboard > * {
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.dashboard .logo-text span {
+    margin-top: 0.4rem;
+
 }
 
 .dashboard .item {
