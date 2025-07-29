@@ -14,6 +14,8 @@
     --main-color: white;
     --test-border: 1px solid red;
     --cards-border: 10px;
+    --cards-shadow: 1px 5px 12px rgba(88, 88, 88, 0.2);
+    --card-border: 1px solid rgba(212, 201, 201, 0.26);
 }
 
 html,
@@ -30,12 +32,81 @@ body {
 }
 
 /*-------------- HEADER STYLES --------------*/
+
+.header {
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+    max-height: 150px;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(88, 88, 88, 0.2);
+}
+
+.header .search-bar, 
+.header .nav-bar {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.header .search-bar .right-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header .search-bar .right-contents span{
+    cursor: pointer;
+}
+
+.header .nav-bar .left-contents {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;   
+
+}
+
+.header img {
+    width: 3.5rem;
+    border-radius: 100px;
+    grid-row: span 2;
+}
+
+.header h2,
+.header h1 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.header .nav-bar {
+    padding: 1.2rem;
+    padding-top: 0;
+}
+
+.header .nav-bar .right-contents {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem
+}
+
+.nav-bar .right-contents > * {
+    color: var(--main-color);
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+    width: 7rem;
+    height: 3rem;
+    text-align: center;
+    padding-top: 0.8rem;
+    cursor: pointer;
+}
+
 .header .search-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    
 }
 
 .header > .search-bar > * {
@@ -99,78 +170,13 @@ body {
     gap: 2rem;
 }
 
-/*-------------- HEADER STYLES --------------*/
-
-.header {
-    display: flex;
-    flex-direction: column;
-    min-height: 120px;
-    max-height: 150px;
-}
-
-.header .search-bar, 
-.header .nav-bar {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-}
-
-.header .search-bar .right-contents {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-
-.header .search-bar .right-contents span{
-    cursor: pointer;
-}
-
-.header .nav-bar .left-contents {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;   
-
-}
-
-.header img {
-    width: 3.5rem;
-    border-radius: 100px;
-    grid-row: span 2;
-}
-
-.header h2,
-.header h1 {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-}
-
-.header .nav-bar {
-    padding: 1.2rem;
-    padding-top: 0;
-}
-
-.header .nav-bar .right-contents {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem
-}
-
-.nav-bar .right-contents > * {
-    color: var(--main-color);
-    background-color: var(--secondary-color);
-    border-radius: 50px;
-    width: 7rem;
-    height: 3rem;
-    text-align: center;
-    padding-top: 0.8rem;
-    cursor: pointer;
-}
 /*-------------- MAIN CONTENT STYLES --------------*/
 
 main {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 3fr 1fr;
+    background-color: rgb(229, 234, 243);
     gap: 1rem;
     padding: 1rem;
     min-height: 0;
@@ -199,7 +205,7 @@ main {
 .projects-section {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
     padding: 1rem;
 }
 
@@ -212,12 +218,18 @@ main {
 
 .project-cards .cards{
     height: 13rem;
-    border: var(--test-border);
     border-radius: var(--cards-border);
+    box-shadow: var(--cards-shadow);
+    border: var(--card-border);
 }
 
 .projects-section {
     grid-row: span 2;
+}
+
+main .section-title {
+    font-size: clamp(1rem, 1.2rem, 1.3rem);
+    font-weight: 500;
 }
 
 .announcements-section {
