@@ -16,6 +16,7 @@
     --cards-border: 10px;
     --cards-shadow: 1px 5px 12px rgba(88, 88, 88, 0.2);
     --card-border: 1px solid rgba(212, 201, 201, 0.26);
+    --cards-line: rgb(255, 217, 46);
 }
 
 html,
@@ -188,6 +189,12 @@ main {
     border: var(--test-border);
 }
 
+.projects-section .project-cards .cards,
+.announcements-section .pages,
+.trendings-section .pages {
+    background-color: var(--main-color);
+}
+
 .project-cards,
 .announcements-section,
 .trendings-section {
@@ -217,14 +224,42 @@ main {
 }
 
 .project-cards .cards{
+    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 13rem;
     border-radius: var(--cards-border);
     box-shadow: var(--cards-shadow);
     border: var(--card-border);
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.project-cards .cards::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 2.5%;
+    background-color: var(--cards-line);
 }
 
 .projects-section {
     grid-row: span 2;
+}
+
+.projects-section .project-cards .cards .text-section > * {
+    font-size: clamp(0.7rem, 1.3vw, 1.2rem);
+}
+
+.projects-section .cards .symbols {
+    text-align: right;
+}
+
+.projects-section .cards .symbols > * {
+    padding-right: 1rem;
 }
 
 main .section-title {
