@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -105,16 +106,65 @@ body {
     flex-direction: column;
     min-height: 120px;
     max-height: 150px;
-    border: var(--test-border);
 }
 
 .header .search-bar, 
 .header .nav-bar {
     display: flex;
-    border: var(--test-border);
     flex: 1;
+    justify-content: space-between;
 }
 
+.header .search-bar .right-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header .search-bar .right-contents span{
+    cursor: pointer;
+}
+
+.header .nav-bar .left-contents {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;   
+
+}
+
+.header img {
+    width: 3.5rem;
+    border-radius: 100px;
+    grid-row: span 2;
+}
+
+.header h2,
+.header h1 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.header .nav-bar {
+    padding: 1.2rem;
+    padding-top: 0;
+}
+
+.header .nav-bar .right-contents {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem
+}
+
+.nav-bar .right-contents > * {
+    color: var(--main-color);
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+    width: 7rem;
+    height: 3rem;
+    text-align: center;
+    padding-top: 0.8rem;
+    cursor: pointer;
+}
 /*-------------- MAIN CONTENT STYLES --------------*/
 
 main {
