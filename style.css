@@ -183,12 +183,6 @@ main {
     min-height: 0;
 }
 
-.projects-section,
-.announcements-section,
-.trendings-section {
-    border: var(--test-border);
-}
-
 .projects-section .project-cards .cards,
 .announcements-section .pages,
 .trendings-section .pages {
@@ -209,6 +203,13 @@ main {
     display: none;
 }
 
+.announcements-section,
+.trendings-section {
+    margin-right: 1rem;
+}
+
+/*-------- PROJECT SECTION STYLING -------- */
+
 .projects-section {
     display: flex;
     flex-direction: column;
@@ -220,7 +221,7 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .project-cards .cards{
@@ -254,7 +255,12 @@ main {
     font-size: clamp(0.7rem, 1.3vw, 1.2rem);
 }
 
+.projects-section .text-section p {
+    font-weight: 400;
+    opacity: 70%;
+}
 .projects-section .cards .symbols {
+    margin-top: 0.5rem;
     text-align: right;
 }
 
@@ -267,16 +273,32 @@ main .section-title {
     font-weight: 500;
 }
 
+/*-------- ANNOUNCEMENT SECTION STYLING -------- */
+
 .announcements-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     padding-top: 0.9rem;
 }
 
 .announcements-section .pages {
-    border: var(--test-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: var(--cards-border);
     padding: 0.6rem;
+    flex: 1;
 }
 
+.announcements-section .pages > * {
+    font-size: clamp(0.5rem, 1vw, 0.9rem);
+}
+
+.announcements-section .pages p {
+    font-weight: 500;
+    opacity: 70%;
+}
 .announcements-section .page {
     border-bottom: 1px solid grey;
 }
@@ -285,14 +307,34 @@ main .section-title {
     border: none;
 }
 
+/*-------- TRENDING SECTION STYLING -------- */
+
 .trendings-section {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.trendings-section .pages img {
+    width: 3.5rem;
+    border-radius: 100px;
 }
 
 .trendings-section .pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 1;
-    border: var(--test-border);
     border-radius: var(--cards-border);
     padding: 0.6rem;
+}
+
+.trendings-section .pages .page {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex: 1;
+    padding: 5px;
+    padding-left: 2rem;
 }
